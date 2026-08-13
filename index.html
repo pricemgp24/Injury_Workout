@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<title>INJURY-SAFE TRAINING</title>
+<title>AFT PREP — INJURY-SAFE</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#07080a;--bg2:#0d0f12;--bg3:#121518;--border:#1c2028;--text:#e8eaf0;--muted:#7a8090;--dim:#3a4050;--od:#c8a840;--od2:#a88020;--od3:#806010;--red:#c03828;--red2:#e04838;--blue:#3068b0;--blue2:#4888d0;--green:#287840;--green2:#38a858;--white:#f0f2f8;}
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;max-width:520px;margin:0 auto;padding-bottom:80px;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;max-width:540px;margin:0 auto;padding-bottom:80px;}
 .cover{position:relative;overflow:hidden;padding:28px 20px 20px;background:linear-gradient(160deg,#0a0c0f,#080a0d);border-bottom:2px solid var(--od3);}
 .cover::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(200,168,64,0.015) 40px,rgba(200,168,64,0.015) 41px),repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(200,168,64,0.015) 40px,rgba(200,168,64,0.015) 41px);}
 .cover .branch{font-size:9px;letter-spacing:6px;color:var(--od);font-family:'DM Mono',monospace;margin-bottom:8px;position:relative;z-index:1;text-transform:uppercase;}
@@ -27,8 +27,8 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;max
 .tl .tw{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;display:block;line-height:1;margin-bottom:2px;}
 .tl-build{background:rgba(200,168,64,0.06);color:var(--od);}
 .tl-peak{background:rgba(224,72,56,0.06);color:var(--red2);}
-.tl-sharp{background:rgba(40,120,64,0.06);color:var(--green2);}
-/* WEEK SEL */
+.tl-sharp{background:rgba(48,104,176,0.06);color:var(--blue2);}
+.tl-taper{background:rgba(40,120,64,0.06);color:var(--green2);}
 .week-sel{background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 12px;}
 .ws-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;}
 .wbtn{padding:6px 2px;border-radius:4px;font-size:10px;font-weight:700;font-family:'DM Mono',monospace;border:1px solid var(--border);background:var(--bg3);color:var(--dim);cursor:pointer;text-align:center;transition:all 0.15s;}
@@ -88,14 +88,20 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;max
 .ex-note{padding:0 12px 10px;}
 .note{font-size:11px;color:var(--muted);line-height:1.6;}
 .note strong{color:var(--text);font-weight:600;}
-.cardio-block{background:rgba(40,120,64,0.06);border:1px solid rgba(56,168,88,0.18);border-radius:7px;padding:10px 12px;margin-top:8px;margin-bottom:6px;}
-.cdb-title{font-size:7px;letter-spacing:3px;color:var(--green2);font-weight:700;text-transform:uppercase;font-family:'DM Mono',monospace;margin-bottom:2px;}
-.cdb-sub{font-size:9px;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:7px;}
-.cdb-row{display:flex;justify-content:space-between;align-items:flex-start;padding:6px 0;border-bottom:1px solid rgba(56,168,88,0.1);gap:8px;}
-.cdb-row:last-child{border-bottom:none;}
-.cdb-name{font-size:13px;font-weight:600;color:var(--text);}
-.cdb-detail{font-size:10px;color:var(--muted);margin-top:1px;font-family:'DM Mono',monospace;line-height:1.5;}
-.cdb-badge{background:rgba(40,120,64,0.12);border:1px solid rgba(56,168,88,0.2);border-radius:3px;padding:3px 7px;font-size:9px;color:var(--green2);font-family:'DM Mono',monospace;white-space:nowrap;flex-shrink:0;}
+.cardio-rx{background:rgba(40,120,64,0.06);border:1px solid rgba(56,168,88,0.18);border-radius:7px;padding:12px;margin-top:8px;margin-bottom:8px;}
+.cardio-rx-title{font-size:8px;letter-spacing:3px;color:var(--green2);font-weight:700;text-transform:uppercase;font-family:'DM Mono',monospace;margin-bottom:8px;}
+.cardio-main{background:var(--bg3);border:1px solid rgba(56,168,88,0.3);border-radius:6px;padding:10px;margin-bottom:8px;}
+.cmn-zone{font-size:10px;font-weight:700;color:var(--green2);font-family:'DM Mono',monospace;margin-bottom:6px;}
+.cmn-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.cmn-hr{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:2px;}
+.cmn-how{font-size:10px;color:var(--text);line-height:1.6;margin-bottom:8px;}
+.cmn-mods{background:rgba(56,168,88,0.08);border-radius:4px;padding:7px;margin-top:6px;}
+.cmn-mod-lbl{font-size:8px;letter-spacing:2px;color:var(--green2);text-transform:uppercase;font-weight:700;font-family:'DM Mono',monospace;margin-bottom:4px;}
+.mod-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px;}
+.mod-row:last-child{margin-bottom:0;}
+.mod-item{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:6px;font-size:10px;}
+.mod-item strong{color:var(--text);display:block;margin-bottom:2px;}
+.mod-item .cue{font-size:9px;color:var(--muted);font-family:'DM Mono',monospace;}
 .rest-card{background:var(--bg2);border:1px solid var(--border);border-radius:7px;padding:24px 18px;text-align:center;margin-bottom:8px;}
 .rest-card .ri{font-size:36px;margin-bottom:8px;}
 .rest-card h3{font-family:'Barlow Condensed',sans-serif;font-size:22px;letter-spacing:2px;color:var(--od);margin-bottom:6px;}
@@ -104,23 +110,23 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;max
 </head>
 <body>
 <div class="cover">
-  <div class="branch">Knee-Safe • Shoulder-Safe • Waist-Focused • Galpin Aerobic Spectrum</div>
-  <h1><span class="l1">INJURY</span><br><span class="l2">SMART</span></h1>
-  <p class="sub">4-day upper/lower split · 30 min cardio EVERY session<br>Zone 1–5 progression · Anti-rotation core · Waist reduction</p>
-  <div class="grid-lbl">Current</div>
+  <div class="branch">AFT Prep • Knee-Safe • Shoulder-Safe • Fast Gains</div>
+  <h1><span class="l1">AFT</span><br><span class="l2">READY</span></h1>
+  <p class="sub">4 Training Sets · Daily Zone Progression · Galpin Energy Systems<br>Detailed Cardio Rx by Modality · 2-mile + Deadlift Focus</p>
+  <div class="grid-lbl">Goals</div>
   <div class="stat-row">
-    <div class="sc"><div class="sv">4</div><div class="sk">Days/Wk</div></div>
-    <div class="sc"><div class="sv">30</div><div class="sk">Cardio Min</div></div>
-    <div class="sc"><div class="sv">19</div><div class="sk">Exercises</div></div>
-    <div class="sc"><div class="sv">Z1–Z5</div><div class="sk">Galpin</div></div>
+    <div class="sc"><div class="sv">14:00</div><div class="sk">2-Mile</div></div>
+    <div class="sc"><div class="sv">+30lb</div><div class="sk">Deadlift</div></div>
+    <div class="sc"><div class="sv">↓</div><div class="sk">Waist</div></div>
+    <div class="sc"><div class="sv">✓</div><div class="sk">Healthy</div></div>
   </div>
 </div>
 
 <div class="timeline">
-  <div class="tl tl-build"><span class="tw">WK 1–3</span>BUILD</div>
-  <div class="tl tl-peak"><span class="tw">WK 4</span>PEAK</div>
-  <div class="tl tl-sharp"><span class="tw">WK 5–6</span>MAINTAIN</div>
-  <div class="tl tl-build"><span class="tw">WK 7+</span>SUSTAIN</span></div>
+  <div class="tl tl-build"><span class="tw">SET 1</span>BUILD</div>
+  <div class="tl tl-peak"><span class="tw">SET 2</span>PEAK</div>
+  <div class="tl tl-sharp"><span class="tw">SET 3</span>SHARP</div>
+  <div class="tl tl-taper"><span class="tw">SET 4</span>TAPER</div>
 </div>
 
 <div class="week-sel"><div class="ws-grid" id="week-grid"></div></div>
@@ -143,124 +149,197 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;max
 
 <!-- MONDAY: PUSH & CORE -->
 <div class="page active" id="day-mon">
-  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Monday</div><div class="dh-name" style="color:var(--od);">PUSH & CORE</div><div class="dh-meta">Chest · Triceps · Rotation · 55 min + 30 cardio</div></div><button class="mark-btn" id="mb-mon" onclick="markDay('mon')">MARK DONE</button></div>
+  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Monday</div><div class="dh-name" style="color:var(--od);">PUSH & CORE</div><div class="dh-meta">Chest · Triceps · Anti-Rotation · 55 min + 30 cardio</div></div><button class="mark-btn" id="mb-mon" onclick="markDay('mon')">MARK DONE</button></div>
   
-  <div class="rx"><div class="rx-t">Week Prescription</div><div class="rx-r"><span class="rx-k">Wks 1–3</span><span class="rx-v">3×12–14 · Hypertrophy</span></div><div class="rx-r"><span class="rx-k">Wk 4</span><span class="rx-v">3×8–10 · Strength</span></div><div class="rx-r"><span class="rx-k">Wks 5+</span><span class="rx-v">3×10–12 · Maintain</span></div></div>
+  <div class="rx"><div class="rx-t">Energy System & Strength Rep Range</div><div class="rx-r"><span class="rx-k">Set 1 (BUILD)</span><span class="rx-v">Z1–Z2 + 3×12–14 reps</span></div><div class="rx-r"><span class="rx-k">Set 2 (PEAK)</span><span class="rx-v">Z2–Z3 + 3×8–10 reps</span></div><div class="rx-r"><span class="rx-k">Set 3 (SHARP)</span><span class="rx-v">Z3–Z4 + 3×6–8 reps</span></div><div class="rx-r"><span class="rx-k">Set 4 (TAPER)</span><span class="rx-v">Z1–Z2 + 2×10–12 reps</span></div></div>
   
   <div class="sec" style="color:var(--od);">Chest</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">CHEST</div><div class="ex-name">Machine Chest Press <span class="pr-badge" id="pr-mon-mcp">🏆</span></div></div></div><div class="set-log" id="sl-mon-mcp"></div><div class="ex-note"><div class="note">Slight incline. Full range. Shoulder-safe pressing.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">CHEST</div><div class="ex-name">Machine Chest Press <span class="pr-badge" id="pr-mon-mcp">🏆</span></div></div></div><div class="set-log" id="sl-mon-mcp"></div><div class="ex-note"><div class="note">Slight incline. Full range. Shoulder-safe.</div></div></div>
   
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">CHEST</div><div class="ex-name">Reverse Pec Deck <span class="pr-badge" id="pr-mon-rpd">🏆</span></div></div></div><div class="set-log" id="sl-mon-rpd"></div><div class="ex-note"><div class="note">Rear delts. Shoulder health. Squeeze at peak.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">CHEST</div><div class="ex-name">Reverse Pec Deck <span class="pr-badge" id="pr-mon-rpd">🏆</span></div></div></div><div class="set-log" id="sl-mon-rpd"></div><div class="ex-note"><div class="note">Rear delts. Squeeze at peak. Shoulder health.</div></div></div>
   
   <div class="sec" style="color:var(--od);">Triceps</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--blue2);">TRI</div><div class="ex-name">Tricep Pushdown <span class="pr-badge" id="pr-mon-tri">🏆</span></div></div></div><div class="set-log" id="sl-mon-tri"></div><div class="ex-note"><div class="note">Full lockout. Elbows pinned. Rope preferred.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--blue2);">TRI</div><div class="ex-name">Tricep Pushdown <span class="pr-badge" id="pr-mon-tri">🏆</span></div></div></div><div class="set-log" id="sl-mon-tri"></div><div class="ex-note"><div class="note">Full lockout. Elbows pinned to ribs.</div></div></div>
   
   <div class="sec" style="color:var(--red2);">Anti-Rotation Core</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Pallof Press <span class="pr-badge" id="pr-mon-pal">🏆</span></div></div></div><div class="set-log" id="sl-mon-pal"></div><div class="ex-note"><div class="note">Cable chest height. Press & fight rotation. The waist-tightener. 12 each side.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Pallof Press <span class="pr-badge" id="pr-mon-pal">🏆</span></div></div></div><div class="set-log" id="sl-mon-pal"></div><div class="ex-note"><div class="note">Cable at chest. Press & fight rotation. 12 each side. Waist tightener.</div></div></div>
   
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Plank Hold <span class="pr-badge" id="pr-mon-plk">🏆</span></div></div></div><div class="set-log" id="sl-mon-plk"></div><div class="ex-note"><div class="note">Brace tight. 30–60 sec. Log best hold time in seconds.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Plank Hold <span class="pr-badge" id="pr-mon-plk">🏆</span></div></div></div><div class="set-log" id="sl-mon-plk"></div><div class="ex-note"><div class="note">Brace tight. 30–60 sec. Log time in seconds.</div></div></div>
   
-  <div class="cardio-block">
-    <div class="cdb-title">🏃 30-Min Cardio — Zone 1–2 Recovery</div>
-    <div class="cdb-sub">Monday · Fat-burning aerobic base · Conversational pace</div>
-    <div class="cdb-row"><div><div class="cdb-name">Stationary Bike or Incline Walk</div><div class="cdb-detail">HR under 130 bpm · Zone 1–2 · You should be able to speak in full sentences. This is fat-loss cardio where your waist measurement drops. 30 minutes, steady.</div></div><div class="cdb-badge">Z1–Z2</div></div>
+  <div class="cardio-rx">
+    <div class="cardio-rx-title">Monday Cardio — Zone 1–2 Recovery Base</div>
+    <div class="cardio-main">
+      <div class="cmn-zone">ZONE 1–2 (Recovery Fat-Burning)</div>
+      <div class="cmn-name">30 Minutes · Conversational Pace</div>
+      <div class="cmn-hr"><strong>HR Target:</strong> Under 130 bpm (or talk in full sentences without breathing hard)</div>
+      <div class="cmn-how"><strong>How to know you're right:</strong> You can speak 3-4 sentences without pausing for breath. Steady, easy, no gasping.</div>
+      <div class="cmn-mods">
+        <div class="cmn-mod-lbl">Choose One Modality (30 min)</div>
+        <div class="mod-row">
+          <div class="mod-item"><strong>🚴 Stationary Bike</strong><div class="cue">Easy gear. Resistance 3-4/10. Spin 80-90 rpm. No burning quads.</div></div>
+          <div class="mod-item"><strong>🚴 Upright Bike</strong><div class="cue">Same effort. Good for core stability. Easier on knees than treadmill.</div></div>
+        </div>
+        <div class="mod-row">
+          <div class="mod-item"><strong>🚶 Incline Walk</strong><div class="cue">Treadmill 3.5–4.0 mph, 5–8% incline. Arms swinging. Glutes firing.</div></div>
+          <div class="mod-item"><strong>🚣 Rowing Machine</strong><div class="cue">Pace 2:15–2:30/500m. Smooth strokes. Legs first, then back, then arms.</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- TUESDAY: LOWER + CARDIO -->
+<!-- TUESDAY: DEADLIFT + LOWER -->
 <div class="page" id="day-tue">
-  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Tuesday</div><div class="dh-name" style="color:var(--od);">LOWER + CARDIO</div><div class="dh-meta">Quads · Hams · Glutes · 55 min + 30 cardio</div></div><button class="mark-btn" id="mb-tue" onclick="markDay('tue')">MARK DONE</button></div>
+  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Tuesday</div><div class="dh-name" style="color:var(--red2);">DEADLIFT + LOWER</div><div class="dh-meta">Hex Bar Deadlift · Quads · Hams · 55 min + 30 cardio</div></div><button class="mark-btn" id="mb-tue" onclick="markDay('tue')">MARK DONE</button></div>
   
-  <div class="rx"><div class="rx-t">Week Prescription</div><div class="rx-r"><span class="rx-k">Wks 1–3</span><span class="rx-v">4×12–14 · Hypertrophy</span></div><div class="rx-r"><span class="rx-k">Wk 4</span><span class="rx-v">4×8–10 · Strength</span></div><div class="rx-r"><span class="rx-k">Wks 5+</span><span class="rx-v">3×10–12 · Maintain</span></div></div>
+  <div class="rx"><div class="rx-t">Deadlift Progression</div><div class="rx-r"><span class="rx-k">SET 1</span><span class="rx-v">4×6 @ 70% + 30 min Z2</span></div><div class="rx-r"><span class="rx-k">SET 2</span><span class="rx-v">4×4 @ 80% + 20 min Z2 tempo</span></div><div class="rx-r"><span class="rx-k">SET 3</span><span class="rx-v">1×1 @ 90–95% + 20 min Z2–Z3</span></div><div class="rx-r"><span class="rx-k">SET 4</span><span class="rx-v">2×3 @ 75% + 30 min Z1–Z2</span></div></div>
+  
+  <div class="sec" style="color:var(--red2);">Hex Bar Deadlift — AFT Event</div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">DL · PROGRESS</div><div class="ex-name">Hex Bar Deadlift <span class="pr-badge" id="pr-tue-dl">🏆</span></div></div></div><div class="set-log" id="sl-tue-dl"></div><div class="ex-note"><div class="note">Competition form. Full reset each rep. Never miss. Progressive overload weekly.</div></div></div>
   
   <div class="sec" style="color:var(--od);">Lower — Knee Safe</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">QUAD</div><div class="ex-name">Leg Press (Machine) <span class="pr-badge" id="pr-tue-lp">🏆</span></div></div></div><div class="set-log" id="sl-tue-lp"></div><div class="ex-note"><div class="note">Shallow ROM — knees to 90° max. Quad primary. Safer than squats.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">QUAD</div><div class="ex-name">Leg Press (Machine) <span class="pr-badge" id="pr-tue-lp">🏆</span></div></div></div><div class="set-log" id="sl-tue-lp"></div><div class="ex-note"><div class="note">Shallow ROM — 90° knees max. Safer than free squats.</div></div></div>
   
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">QUAD</div><div class="ex-name">Leg Extension <span class="pr-badge" id="pr-tue-le">🏆</span></div></div></div><div class="set-log" id="sl-tue-le"></div><div class="ex-note"><div class="note">2-sec squeeze. Isolated quad work. No impact.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">QUAD</div><div class="ex-name">Leg Extension <span class="pr-badge" id="pr-tue-le">🏆</span></div></div></div><div class="set-log" id="sl-tue-le"></div><div class="ex-note"><div class="note">2-sec squeeze at top. Isolated quad work.</div></div></div>
   
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">HAM</div><div class="ex-name">Leg Curl <span class="pr-badge" id="pr-tue-lc">🏆</span></div></div></div><div class="set-log" id="sl-tue-lc"></div><div class="ex-note"><div class="note">3-sec negative. Slow descent. Hamstring power.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">HAM</div><div class="ex-name">Leg Curl <span class="pr-badge" id="pr-tue-lc">🏆</span></div></div></div><div class="set-log" id="sl-tue-lc"></div><div class="ex-note"><div class="note">3-sec negative. Hamstring power for deadlift.</div></div></div>
   
   <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">GLUTE</div><div class="ex-name">Glute Bridge <span class="pr-badge" id="pr-tue-gb">🏆</span></div></div></div><div class="set-log" id="sl-tue-gb"></div><div class="ex-note"><div class="note">1-sec squeeze at top. Hip extension power.</div></div></div>
   
-  <div class="cardio-block">
-    <div class="cdb-title">🏃 30-Min Cardio — Zone 2 Threshold</div>
-    <div class="cdb-sub">Tuesday · Lactate threshold · Comfortably hard</div>
-    <div class="cdb-row"><div><div class="cdb-name">Bike or brisk walk tempo</div><div class="cdb-detail">HR 130–145 bpm · Zone 2–3 boundary · You can talk in short phrases but not full sentences. This teaches your body to clear lactate faster. Galpin: raising your aerobic ceiling.</div></div><div class="cdb-badge">Z2–Z3</div></div>
+  <div class="cardio-rx">
+    <div class="cardio-rx-title">Tuesday Cardio — Zone 2 Lactate Threshold</div>
+    <div class="cardio-main">
+      <div class="cmn-zone">ZONE 2 (Threshold · Lactate Clearance)</div>
+      <div class="cmn-name">30 Minutes · Comfortably Hard Pace</div>
+      <div class="cmn-hr"><strong>HR Target:</strong> 130–145 bpm (or able to speak in short phrases, not full sentences)</div>
+      <div class="cmn-how"><strong>How to know you're right:</strong> You CAN talk, but only in 2-3 word bursts. "I'm working... this is hard." Breathing is elevated but controlled.</div>
+      <div class="cmn-mods">
+        <div class="cmn-mod-lbl">Choose One Modality (30 min continuous OR structured intervals)</div>
+        <div class="mod-row">
+          <div class="mod-item"><strong>🚴 Bike Tempo</strong><div class="cue">Resistance 5-6/10. 90-100 rpm. Steady effort, not sprinting.</div></div>
+          <div class="mod-item"><strong>🚶 Incline Walk Brisk</strong><div class="cue">4.5–5.0 mph, 6% incline. Power walk, shoulders engaged.</div></div>
+        </div>
+        <div class="mod-row">
+          <div class="mod-item"><strong>🚣 Rowing Steady</strong><div class="cue">Pace 2:00–2:15/500m. Harder strokes. Breathing elevated.</div></div>
+          <div class="mod-item"><strong>SET 2+: 2 Miles @ Tempo Pace</strong><div class="cue">If running available: 7:15–7:30/mile (or bike/row equivalent).</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- WEDNESDAY: PULL & ABS -->
 <div class="page" id="day-wed">
-  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Wednesday</div><div class="dh-name" style="color:var(--od);">PULL & ABS</div><div class="dh-meta">Back · Biceps · Anti-Extension Core · 55 min + 30 cardio</div></div><button class="mark-btn" id="mb-wed" onclick="markDay('wed')">MARK DONE</button></div>
+  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Wednesday</div><div class="dh-name" style="color:var(--blue2);">PULL & ABS + VO2</div><div class="dh-meta">Back · Biceps · Anti-Extension · 55 min + 30 cardio INTERVALS</div></div><button class="mark-btn" id="mb-wed" onclick="markDay('wed')">MARK DONE</button></div>
   
-  <div class="rx"><div class="rx-t">Week Prescription</div><div class="rx-r"><span class="rx-k">Wks 1–3</span><span class="rx-v">3×12–14 · Hypertrophy</span></div><div class="rx-r"><span class="rx-k">Wk 4</span><span class="rx-v">3×8–10 · Strength</span></div><div class="rx-r"><span class="rx-k">Wks 5+</span><span class="rx-v">3×10–12 · Maintain</span></div></div>
+  <div class="rx"><div class="rx-t">Wednesday is PEAK Cardio Day — VO2 Max (Waist Reduction Zone)</div><div class="rx-r"><span class="rx-k">Set 1</span><span class="rx-v">5×3min Z3 + 90 sec easy</span></div><div class="rx-r"><span class="rx-k">Set 2</span><span class="rx-v">6×3min Z3 + 90 sec easy</span></div><div class="rx-r"><span class="rx-k">Set 3</span><span class="rx-v">6×3min Z3 + 6×800m speed</span></div><div class="rx-r"><span class="rx-k">Set 4</span><span class="rx-v">4×3min Z3 (taper)</span></div></div>
   
   <div class="sec" style="color:var(--od);">Back</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">BACK</div><div class="ex-name">Lat Pulldown (Narrow) <span class="pr-badge" id="pr-wed-lpd">🏆</span></div></div></div><div class="set-log" id="sl-wed-lpd"></div><div class="ex-note"><div class="note">Shoulder-width grip. Shoulder-safe. Pull to mid-chest. Full stretch at top.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">BACK</div><div class="ex-name">Lat Pulldown (Narrow) <span class="pr-badge" id="pr-wed-lpd">🏆</span></div></div></div><div class="set-log" id="sl-wed-lpd"></div><div class="ex-note"><div class="note">Shoulder-width grip. Pull to mid-chest. Full stretch at top. Shoulder-safe.</div></div></div>
   
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">BACK</div><div class="ex-name">Dumbbell Rows <span class="pr-badge" id="pr-wed-dbr">🏆</span></div></div></div><div class="set-log" id="sl-wed-dbr"></div><div class="ex-note"><div class="note">One arm at a time. Light to moderate. Controlled tempo. 10–12 each side.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">BACK</div><div class="ex-name">Dumbbell Rows <span class="pr-badge" id="pr-wed-dbr">🏆</span></div></div></div><div class="set-log" id="sl-wed-dbr"></div><div class="ex-note"><div class="note">One arm. Light to moderate. 10–12 each side.</div></div></div>
   
   <div class="sec" style="color:var(--od);">Biceps</div>
   <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--blue2);">BI</div><div class="ex-name">Dumbbell Curl <span class="pr-badge" id="pr-wed-dbc">🏆</span></div></div></div><div class="set-log" id="sl-wed-dbc"></div><div class="ex-note"><div class="note">Neutral grip. Full range. Squeeze at top.</div></div></div>
   
   <div class="sec" style="color:var(--red2);">Anti-Extension Core</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Dead Bugs <span class="pr-badge" id="pr-wed-db">🏆</span></div></div></div><div class="set-log" id="sl-wed-db"></div><div class="ex-note"><div class="note">Opposite arm & leg extension. Protects lower back. 10 each side.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Dead Bugs <span class="pr-badge" id="pr-wed-db">🏆</span></div></div></div><div class="set-log" id="sl-wed-db"></div><div class="ex-note"><div class="note">Opposite arm & leg. 10 each side. Protects lower back.</div></div></div>
   
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Machine Crunches <span class="pr-badge" id="pr-wed-mc">🏆</span></div></div></div><div class="set-log" id="sl-wed-mc"></div><div class="ex-note"><div class="note">Knees bent 90°. Controlled crunch. Direct waist work. 12–15 reps.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Machine Crunches <span class="pr-badge" id="pr-wed-mc">🏆</span></div></div></div><div class="set-log" id="sl-wed-mc"></div><div class="ex-note"><div class="note">Knees 90°. Controlled crunch. Direct waist. 12–15 reps.</div></div></div>
   
-  <div class="cardio-block">
-    <div class="cdb-title">🏃 30-Min Cardio — Zone 3 VO2 Max</div>
-    <div class="cdb-sub">Wednesday · Highest return cardio · 90–95% max HR</div>
-    <div class="cdb-row"><div><div class="cdb-name">Wks 1–2: 5×3min hard @ Z3</div><div class="cdb-detail">3 min at 80–85% max HR, 90 sec easy recovery between. This is where your waist fat loss ACCELERATES. Galpin Z3 = maximum aerobic power without going full anaerobic.</div></div><div class="cdb-badge">Z3</div></div>
-    <div class="cdb-row"><div><div class="cdb-name">Wks 3–4: 6×3min hard @ Z3</div><div class="cdb-detail">Add one more rep. Same effort level. Build the capacity.</div></div><div class="cdb-badge">Z3+</div></div>
-    <div class="cdb-row"><div><div class="cdb-name">Wks 5+: 4×3min @ Z3</div><div class="cdb-detail">Taper. Maintain VO2 max without adding fatigue.</div></div><div class="cdb-badge">Z3</div></div>
+  <div class="cardio-rx">
+    <div class="cardio-rx-title">Wednesday Cardio — Zone 3 VO2 Max (PEAK FAT LOSS ZONE)</div>
+    <div class="cardio-main">
+      <div class="cmn-zone">ZONE 3 (VO2 Max · Anaerobic Power)</div>
+      <div class="cmn-name">Hard Intervals · Maximum Aerobic Power</div>
+      <div class="cmn-hr"><strong>HR Target:</strong> 160–170 bpm (80–85% max HR) — Can only speak 1-2 words at a time</div>
+      <div class="cmn-how"><strong>How to know you're right:</strong> Breathing is HARD. You can only say single words or short bursts. This is where your waist fat DROPS fastest. 3-min hard, 90-sec easy recovery.</div>
+      <div class="cmn-mods">
+        <div class="cmn-mod-lbl">SET 1 & 2: 5–6×3min Hard + 90 sec Easy Recovery</div>
+        <div class="mod-row">
+          <div class="mod-item"><strong>🚴 Bike VO2 Intervals</strong><div class="cue">Resistance 7-8/10, 100+ rpm. 3 min HARD breathing, 90 sec spin easy. 5 rounds. TOTAL 22.5 min.</div></div>
+          <div class="mod-item"><strong>🚣 Rowing VO2 Intervals</strong><div class="cue">Pace 1:45–1:55/500m (HARD). 3 min hard stroke, 90 sec easy paddle. 5 rounds.</div></div>
+        </div>
+        <div class="mod-row">
+          <div class="mod-item"><strong>🚶 Incline Walk Sprints</strong><div class="cue">8% incline, 6.0+ mph for 3 min, drop to 4.0 mph for 90 sec recovery. 5 rounds.</div></div>
+          <div class="mod-item"><strong>🏃 Running VO2</strong><div class="cue">5K pace or faster. 3 min hard, 90 sec jog easy. 5 rounds = ~25 min total.</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- THURSDAY: SHOULDERS + CORE -->
 <div class="page" id="day-thu">
-  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Thursday</div><div class="dh-name" style="color:var(--od);">SHOULDERS + CORE</div><div class="dh-meta">Delts · Rotational Core · 55 min + 30 cardio</div></div><button class="mark-btn" id="mb-thu" onclick="markDay('thu')">MARK DONE</button></div>
-  
-  <div class="rx"><div class="rx-t">Week Prescription</div><div class="rx-r"><span class="rx-k">Wks 1–3</span><span class="rx-v">3×12–14 · Hypertrophy</span></div><div class="rx-r"><span class="rx-k">Wk 4</span><span class="rx-v">3×8–10 · Strength</span></div><div class="rx-r"><span class="rx-k">Wks 5+</span><span class="rx-v">3×10–12 · Maintain</span></div></div>
+  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Thursday</div><div class="dh-name" style="color:var(--od);">SHOULDERS + CORE</div><div class="dh-meta">Delts · Rotational · Conditioning · 55 min + 30 cardio</div></div><button class="mark-btn" id="mb-thu" onclick="markDay('thu')">MARK DONE</button></div>
   
   <div class="sec" style="color:var(--od);">Shoulders</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">DELT</div><div class="ex-name">Cable Lateral Raise <span class="pr-badge" id="pr-thu-clr">🏆</span></div></div></div><div class="set-log" id="sl-thu-clr"></div><div class="ex-note"><div class="note">Low cable, single arm. Raise to shoulder height. Constant tension. Better than DBs.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">DELT</div><div class="ex-name">Cable Lateral Raise <span class="pr-badge" id="pr-thu-clr">🏆</span></div></div></div><div class="set-log" id="sl-thu-clr"></div><div class="ex-note"><div class="note">Low cable, single arm. Raise to shoulder height. Constant tension.</div></div></div>
   
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">DELT</div><div class="ex-name">Cable Face Pull <span class="pr-badge" id="pr-thu-cfp">🏆</span></div></div></div><div class="set-log" id="sl-thu-cfp"></div><div class="ex-note"><div class="note">Rear delts. Elbows wide. Shoulder health. 15–20 reps every set. Non-negotiable.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">DELT</div><div class="ex-name">Cable Face Pull <span class="pr-badge" id="pr-thu-cfp">🏆</span></div></div></div><div class="set-log" id="sl-thu-cfp"></div><div class="ex-note"><div class="note">Rear delts. Elbows wide. 15–20 reps every set. Non-negotiable shoulder health.</div></div></div>
   
-  <div class="sec" style="color:var(--red2);">Rotational Core — Waist Reduction</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Suitcase Carry <span class="pr-badge" id="pr-thu-suc">🏆</span></div></div></div><div class="set-log" id="sl-thu-suc"></div><div class="ex-note"><div class="note">One-sided load. Obliques prevent tilting. 30–40 steps each side. Log weight carried. Direct waist work.</div></div></div>
+  <div class="sec" style="color:var(--red2);">Rotational Core + Conditioning</div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Suitcase Carry <span class="pr-badge" id="pr-thu-suc">🏆</span></div></div></div><div class="set-log" id="sl-thu-suc"></div><div class="ex-note"><div class="note">One-sided load. Obliques prevent tilting. 30–40 steps each side. Log weight.</div></div></div>
   
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Machine Twisting Crunch <span class="pr-badge" id="pr-thu-mtc">🏆</span></div></div></div><div class="set-log" id="sl-thu-mtc"></div><div class="ex-note"><div class="note">Crunch + rotation. Elbow to opposite knee. 15 each side. Oblique builder for waist definition.</div></div></div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Machine Twisting Crunch <span class="pr-badge" id="pr-thu-mtc">🏆</span></div></div></div><div class="set-log" id="sl-thu-mtc"></div><div class="ex-note"><div class="note">Crunch + rotation. Elbow to opposite knee. 15 each side. Oblique builder.</div></div></div>
   
-  <div class="cardio-block">
-    <div class="cdb-title">🏃 30-Min Cardio — Zone 1–2 Recovery</div>
-    <div class="cdb-sub">Thursday · Active recovery after Wed VO2 · Conversational pace</div>
-    <div class="cdb-row"><div><div class="cdb-name">Bike or easy walk</div><div class="cdb-detail">HR under 130 bpm · Zone 1–2 · Yesterday was hard VO2 work. Today is recovery. Keep moving, clear lactate, don't add stress.</div></div><div class="cdb-badge">Z1–Z2</div></div>
+  <div class="cardio-rx">
+    <div class="cardio-rx-title">Thursday Cardio — Zone 2–3 Recovery After Wed Peak</div>
+    <div class="cardio-main">
+      <div class="cmn-zone">ZONE 2–3 (Active Recovery or Speed Work)</div>
+      <div class="cmn-name">30 Minutes · Recover or Build Speed</div>
+      <div class="cmn-hr"><strong>Set 1–2 HR:</strong> 120–135 bpm — Easy conversation<br><strong>Set 3 HR:</strong> 160+ bpm for speed — 4×400m @ race pace</div>
+      <div class="cmn-how"><strong>SET 1 & 2:</strong> Easy. You're recovering from Wed VO2. Should feel good and loose.<br><strong>SET 3:</strong> 4×400m @ race pace with full recovery between. Building speed for 2-mile.</div>
+      <div class="cmn-mods">
+        <div class="cmn-mod-lbl">SET 1 & 2: 30 min Easy Recovery</div>
+        <div class="mod-row">
+          <div class="mod-item"><strong>🚴 Bike Easy Spin</strong><div class="cue">Resistance 2-3/10, 90 rpm. Just moving legs. No effort.</div></div>
+          <div class="mod-item"><strong>🚶 Walk Easy</strong><div class="cue">3.5 mph flat. Conversational. Just getting steps in.</div></div>
+        </div>
+        <div class="mod-row">
+          <div class="mod-item"><strong>🚣 Row Easy</strong><div class="cue">Pace 2:30+/500m. Light strokes. Flushing out lactate.</div></div>
+          <div class="mod-item"><strong>SET 3: 4×400m Speed Work</strong><div class="cue">If running: race pace effort, full recovery walk/jog between. ~20 min total.</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- FRIDAY: REST -->
 <div class="page" id="day-fri">
-  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Friday</div><div class="dh-name" style="color:var(--green2);">COMPLETE REST</div><div class="dh-meta">Zero training · Sleep · Recovery</div></div><button class="mark-btn" id="mb-fri" onclick="markDay('fri')">MARK DONE</button></div>
+  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Friday</div><div class="dh-name" style="color:var(--green2);">COMPLETE REST</div><div class="dh-meta">Sleep · Recovery · Adaptation</div></div><button class="mark-btn" id="mb-fri" onclick="markDay('fri')">MARK DONE</button></div>
   
   <div class="rest-card">
     <div class="ri">😴</div>
     <h3>FULL REST DAY</h3>
-    <p><strong>Non-negotiable.</strong> Sleep 8–9 hours. Zero training. This is where adaptation happens. Your muscles grow and your waist reduces at REST, not during training. Protect this day fiercely.</p>
+    <p><strong>Non-negotiable.</strong> Sleep 8–9 hours. Zero training. Adaptation happens at rest. Your waist reduces at rest, not during workouts. This is where the gains happen.</p>
   </div>
 </div>
 
 <!-- SATURDAY: OPTIONAL CARDIO -->
 <div class="page" id="day-sat">
-  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Saturday</div><div class="dh-name" style="color:var(--green2);">OPTIONAL CARDIO</div><div class="dh-meta">Zone 2 · Waist fat loss · 20–30 min</div></div><button class="mark-btn" id="mb-sat" onclick="markDay('sat')">MARK DONE</button></div>
+  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Saturday</div><div class="dh-name" style="color:var(--green2);">OPTIONAL CARDIO</div><div class="dh-meta">Zone 1–2 · Bonus fat loss · 20–30 min</div></div><button class="mark-btn" id="mb-sat" onclick="markDay('sat')">MARK DONE</button></div>
   
-  <div class="cardio-block">
-    <div class="cdb-title">🏃 Optional 20–30 Min Cardio</div>
-    <div class="cdb-sub">Saturday · Zone 2 · Fat-burning bonus if you feel good</div>
-    <div class="cdb-row"><div><div class="cdb-name">Bike, walk, or rowing machine</div><div class="cdb-detail">HR 100–125 bpm · Zone 1–2 · Optional means OPTIONAL. If you feel good, use this as bonus waist-reduction cardio. If fatigued, skip it entirely and rest.</div></div><div class="cdb-badge">Z1–Z2 Opt</div></div>
+  <div class="cardio-rx">
+    <div class="cardio-rx-title">Saturday Optional Cardio — Zone 1–2 Bonus</div>
+    <div class="cardio-main">
+      <div class="cmn-zone">ZONE 1–2 (Fat-Burning Bonus · Only if Rested)</div>
+      <div class="cmn-name">20–30 Minutes · Easy Pace</div>
+      <div class="cmn-hr"><strong>HR Target:</strong> 100–125 bpm or conversational pace</div>
+      <div class="cmn-how"><strong>How to know:</strong> Super easy. This is ONLY if you feel fresh. If tired, skip. Bonus means bonus, never forced.</div>
+      <div class="cmn-mods">
+        <div class="cmn-mod-lbl">Pick One Modality · 20–30 min Easy</div>
+        <div class="mod-row">
+          <div class="mod-item"><strong>🚴 Bike Easy Spin</strong><div class="cue">30 min, resistance 2-3/10, 80-90 rpm, zero effort.</div></div>
+          <div class="mod-item"><strong>🚶 Walk Leisurely</strong><div class="cue">45 min @ 3.5 mph flat or park walk. Phone call pace.</div></div>
+        </div>
+        <div class="mod-row">
+          <div class="mod-item"><strong>🚣 Row Paddle</strong><div class="cue">25 min easy pace 2:30+/500m. Warm up muscles gently.</div></div>
+          <div class="mod-item"><strong>🏃 Light Jog</strong><div class="cue">20–25 min @ easy conversational pace. Recovery run.</div></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--green2);">CARDIO</div><div class="ex-name">Optional Session <span class="pr-badge" id="pr-sat-opt">🏆</span></div></div></div><div class="set-log" id="sl-sat-opt"></div><div class="ex-note"><div class="note">Log if you do it. Choose: Bike 30 min / Walk 45 min / Row 25 min. This is bonus, never forced.</div></div></div>
 </div>
 
 <!-- SUNDAY: FULL REST -->
@@ -268,25 +347,25 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;max
   <div class="rest-card">
     <div class="ri">🪖</div>
     <h3>SUNDAY REST</h3>
-    <p><strong>Non-negotiable full rest.</strong> Sleep 8–9 hours. Zero training, zero cardio. At this volume, sleep is the #1 performance variable. The work happens at rest.</p>
+    <p><strong>Non-negotiable full rest.</strong> Sleep 8–9 hours. Zero training, zero cardio. At this volume, sleep IS the training. Adaptation is happening.</p>
   </div>
 </div>
 
 <script>
-var CW=parseInt(localStorage.getItem('is_wk')||'1');
-var DONE=JSON.parse(localStorage.getItem('is_done_'+CW)||'[]');
-var currentDay=localStorage.getItem('is_day')||'mon';
+var CW=parseInt(localStorage.getItem('aft_set')||'1');
+var DONE=JSON.parse(localStorage.getItem('aft_done_'+CW)||'[]');
+var currentDay=localStorage.getItem('aft_day')||'mon';
 
 var EXS=[
   ['mon','mcp',3,true],['mon','rpd',3,true],['mon','tri',3,true],['mon','pal',3,false],['mon','plk',1,false],
-  ['tue','lp',3,true],['tue','le',3,true],['tue','lc',3,true],['tue','gb',3,true],
+  ['tue','dl',4,false],['tue','lp',3,true],['tue','le',3,true],['tue','lc',3,true],['tue','gb',3,true],
   ['wed','lpd',3,true],['wed','dbr',3,true],['wed','dbc',3,true],['wed','db',3,false],['wed','mc',3,true],
   ['thu','clr',3,true],['thu','cfp',3,false],['thu','suc',3,false],['thu','mtc',3,true],
   ['fri','rest',0,false],
   ['sat','opt',1,false],
 ];
 
-function lk(w,d,e,s){return 'is:w'+w+':'+d+':'+e+':s'+s;}
+function lk(w,d,e,s){return 'aft:set'+w+':'+d+':'+e+':s'+s;}
 
 function buildAllSets(){EXS.forEach(function(e){buildSets(e[0],e[1],e[2],e[3]);});}
 
@@ -400,7 +479,7 @@ function showDay(id,btn){
   var el=document.getElementById('day-'+id);if(el)el.style.display='block';
   if(btn)btn.classList.add('active');
   else{var t=document.getElementById('dtb-'+id);if(t)t.classList.add('active');}
-  currentDay=id;localStorage.setItem('is_day',id);
+  currentDay=id;localStorage.setItem('aft_day',id);
 }
 
 function markDay(dayId){
@@ -408,15 +487,15 @@ function markDay(dayId){
   var idx=DONE.indexOf(dayId);
   if(idx>-1){DONE.splice(idx,1);if(mb){mb.classList.remove('done');mb.textContent='MARK DONE';}if(tab)tab.classList.remove('done-d');}
   else{DONE.push(dayId);if(mb){mb.classList.add('done');mb.textContent='✓ DONE';}if(tab)tab.classList.add('done-d');}
-  localStorage.setItem('is_done_'+CW,JSON.stringify(DONE));updateProgress();
+  localStorage.setItem('aft_done_'+CW,JSON.stringify(DONE));updateProgress();
 }
 
 var grid=document.getElementById('week-grid');
-[{n:'WK1'},{n:'WK2'},{n:'WK3'},{n:'WK4'},{n:'WK5'},{n:'WK6'},{n:'WK7'},{n:'WK8'},{n:'WK9'},{n:'WK10'},{n:'WK11'},{n:'WK12'}].forEach(function(w,i){
+[{n:'SET 1'},{n:'SET 2'},{n:'SET 3'},{n:'SET 4'}].forEach(function(w,i){
   var btn=document.createElement('button');btn.className='wbtn'+(i+1===CW?' active':'');btn.textContent=w.n;
-  btn.onclick=(function(wk,el){return function(){
-    CW=wk;localStorage.setItem('is_wk',CW);
-    DONE=JSON.parse(localStorage.getItem('is_done_'+CW)||'[]');
+  btn.onclick=(function(set,el){return function(){
+    CW=set;localStorage.setItem('aft_set',CW);
+    DONE=JSON.parse(localStorage.getItem('aft_done_'+CW)||'[]');
     document.querySelectorAll('.wbtn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');
     updateProgress();restoreDayBtns();
     EXS.forEach(function(e){var sl=document.getElementById('sl-'+e[0]+'-'+e[1]);if(sl)buildSets(e[0],e[1],e[2],e[3]);});
@@ -449,336 +528,3 @@ updateProgress();restoreDayBtns();buildAllSets();showDay(currentDay,null);
 </script>
 </body>
 </html>
-.rest-card p{font-size:12px;color:var(--muted);line-height:1.7;}
-</style>
-</head>
-<body>
-<div class="cover">
-  <div class="branch">Knee-Safe • Shoulder-Safe • Waist-Focused</div>
-  <h1><span class="l1">INJURY</span><br><span class="l2">SMART</span></h1>
-  <p class="sub">Knee-friendly machines · Rotator cuff safe · Anti-rotation core<br>4-day split · Steady cardio · Waist reduction focused</p>
-  <div class="grid-lbl">Phase</div>
-  <div class="stat-row">
-    <div class="sc"><div class="sv">—</div><div class="sk">Weeks</div></div>
-    <div class="sc"><div class="sv">4</div><div class="sk">Days/Wk</div></div>
-    <div class="sc"><div class="sv">19</div><div class="sk">Exercises</div></div>
-    <div class="sc"><div class="sv">∞</div><div class="sk">Tracking</div></div>
-  </div>
-  <div class="grid-lbl">Goals</div>
-  <div class="stat-row">
-    <div class="tc"><div class="sv">↓</div><div class="sk">Waist</div></div>
-    <div class="tc"><div class="sv">↑</div><div class="sk">Core</div></div>
-    <div class="tc"><div class="sv">✓</div><div class="sk">Healthy</div></div>
-    <div class="tc"><div class="sv">📈</div><div class="sk">Progress</div></div>
-  </div>
-</div>
-
-<div class="timeline">
-  <div class="tl tl-phase"><span class="tw">WEEK 1</span>BUILD</div>
-  <div class="tl tl-phase"><span class="tw">WEEK 2</span>BUILD</div>
-  <div class="tl tl-phase"><span class="tw">WEEK 3</span>BUILD</div>
-  <div class="tl tl-phase"><span class="tw">WEEK 4+</span>MAINTAIN</div>
-</div>
-
-<div class="week-sel"><div class="ws-grid" id="week-grid"></div></div>
-
-<div class="wk-prog">
-  <div class="wp-row"><span class="wp-lbl">Weekly Progress</span><span class="wp-cnt" id="wpc">0 / 4</span></div>
-  <div class="wp-bar"><div class="wp-fill" id="wpf" style="width:0%"></div></div>
-  <div class="wp-dots" id="wpd"></div>
-</div>
-
-<div class="day-bar">
-  <button class="dbt active" onclick="showDay('mon',this)" id="dtb-mon">MON</button>
-  <button class="dbt" onclick="showDay('tue',this)" id="dtb-tue">TUE</button>
-  <button class="dbt" onclick="showDay('wed',this)" id="dtb-wed">WED</button>
-  <button class="dbt" onclick="showDay('thu',this)" id="dtb-thu">THU</button>
-  <button class="dbt" onclick="showDay('fri',this)" id="dtb-fri">FRI</button>
-  <button class="dbt" onclick="showDay('sat',this)" id="dtb-sat">SAT</button>
-  <button class="dbt" onclick="showDay('sun',this)" id="dtb-sun">SUN</button>
-</div>
-
-<!-- MONDAY: PUSH & CORE -->
-<div class="page active" id="day-mon">
-  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Monday</div><div class="dh-name" style="color:var(--od);">PUSH & CORE</div><div class="dh-meta">Chest · Triceps · Rotation · ~55 min</div></div><button class="mark-btn" id="mb-mon" onclick="markDay('mon')">MARK DONE</button></div>
-  
-  <div class="sec" style="color:var(--od);">Chest</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">CHEST</div><div class="ex-name">Machine Chest Press <span class="pr-badge" id="pr-mon-mcp">🏆</span></div></div></div><div class="set-log" id="sl-mon-mcp"></div><div class="ex-note"><div class="note">Slight incline. Full range of motion. Safe machine-based pressing.</div></div></div>
-  
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">CHEST</div><div class="ex-name">Reverse Pec Deck <span class="pr-badge" id="pr-mon-rpd">🏆</span></div></div></div><div class="set-log" id="sl-mon-rpd"></div><div class="ex-note"><div class="note">Rear delts & shoulder health. Squeeze at peak contraction.</div></div></div>
-  
-  <div class="sec" style="color:var(--od);">Triceps</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--blue2);">TRI</div><div class="ex-name">Tricep Pushdown <span class="pr-badge" id="pr-mon-tri">🏆</span></div></div></div><div class="set-log" id="sl-mon-tri"></div><div class="ex-note"><div class="note">Rope or bar. Full lockout. Elbows pinned to ribs.</div></div></div>
-  
-  <div class="sec" style="color:var(--red2);">Anti-Rotation Core</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Pallof Press <span class="pr-badge" id="pr-mon-pal">🏆</span></div></div></div><div class="set-log" id="sl-mon-pal"></div><div class="ex-note"><div class="note">Cable at chest height. Press out and fight rotation. THE waist-tightening exercise. 12 each side.</div></div></div>
-  
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Plank Hold <span class="pr-badge" id="pr-mon-plk">🏆</span></div></div></div><div class="set-log" id="sl-mon-plk"></div><div class="ex-note"><div class="note">Braced tight. 30–60 seconds. Isometric core stability. Log your best hold time.</div></div></div>
-  
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Suitcase Carry <span class="pr-badge" id="pr-mon-suc">🏆</span></div></div></div><div class="set-log" id="sl-mon-suc"></div><div class="ex-note"><div class="note">One-sided load. Obliques work hard to prevent tilting. 30–40 steps each side. Log weight carried.</div></div></div>
-</div>
-
-<!-- TUESDAY: LOWER + CARDIO -->
-<div class="page" id="day-tue">
-  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Tuesday</div><div class="dh-name" style="color:var(--od);">LOWER + CARDIO</div><div class="dh-meta">Quads · Hamstrings · Glutes · Bike · ~55 min + cardio</div></div><button class="mark-btn" id="mb-tue" onclick="markDay('tue')">MARK DONE</button></div>
-  
-  <div class="sec" style="color:var(--od);">Lower Body — Knee Safe</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">QUAD</div><div class="ex-name">Leg Press (Machine) <span class="pr-badge" id="pr-tue-lp">🏆</span></div></div></div><div class="set-log" id="sl-tue-lp"></div><div class="ex-note"><div class="note">Keep knees at 90° max. Safer than squats. Controlled range of motion.</div></div></div>
-  
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">QUAD</div><div class="ex-name">Leg Extension <span class="pr-badge" id="pr-tue-le">🏆</span></div></div></div><div class="set-log" id="sl-tue-le"></div><div class="ex-note"><div class="note">2-second squeeze at peak. Isolated quad work. No impact on knees.</div></div></div>
-  
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">HAM</div><div class="ex-name">Leg Curl <span class="pr-badge" id="pr-tue-lc">🏆</span></div></div></div><div class="set-log" id="sl-tue-lc"></div><div class="ex-note"><div class="note">Slow negative. 3-second descent. Hamstring development supports lower body.</div></div></div>
-  
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">GLUTE</div><div class="ex-name">Glute Bridge <span class="pr-badge" id="pr-tue-gb">🏆</span></div></div></div><div class="set-log" id="sl-tue-gb"></div><div class="ex-note"><div class="note">1-second squeeze at top. Glute activation. Can use bodyweight or light weight.</div></div></div>
-</div>
-
-<!-- WEDNESDAY: CARDIO & RECOVERY -->
-<div class="page" id="day-wed">
-  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Wednesday</div><div class="dh-name" style="color:var(--green2);">CARDIO & RECOVERY</div><div class="dh-meta">Active recovery · Zone 2 pace · Steady state</div></div><button class="mark-btn" id="mb-wed" onclick="markDay('wed')">MARK DONE</button></div>
-  
-  <div class="rest-card">
-    <div class="ri">🚴</div>
-    <h3>STEADY CARDIO</h3>
-    <p><strong>Rowing machine, stationary bike, or easy walk.</strong> 20–30 minutes at conversational pace. Zone 2 fat-burning. Log your duration and modality. This is where waist reduction happens.</p>
-  </div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--green2);">CARDIO</div><div class="ex-name">Steady State Session <span class="pr-badge" id="pr-wed-card">🏆</span></div></div></div><div class="set-log" id="sl-wed-card"></div><div class="ex-note"><div class="note">Log your choice: Rower / Bike / Walk, duration, and how you felt. Pace should allow full conversation.</div></div></div>
-</div>
-
-<!-- THURSDAY: PULL & ABS -->
-<div class="page" id="day-thu">
-  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Thursday</div><div class="dh-name" style="color:var(--od);">PULL & ABS</div><div class="dh-meta">Back · Biceps · Anti-Extension Core · ~55 min</div></div><button class="mark-btn" id="mb-thu" onclick="markDay('thu')">MARK DONE</button></div>
-  
-  <div class="sec" style="color:var(--od);">Back</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">BACK</div><div class="ex-name">Lat Pulldown (Narrow) <span class="pr-badge" id="pr-thu-lpd">🏆</span></div></div></div><div class="set-log" id="sl-thu-lpd"></div><div class="ex-note"><div class="note">Shoulder-width grip. Narrow is safer for rotator cuff. Pull to mid-chest.</div></div></div>
-  
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">BACK</div><div class="ex-name">Dumbbell Rows <span class="pr-badge" id="pr-thu-dbr">🏆</span></div></div></div><div class="set-log" id="sl-thu-dbr"></div><div class="ex-note"><div class="note">One arm at a time. Light to moderate weight. Controlled tempo. 10–12 each side.</div></div></div>
-  
-  <div class="sec" style="color:var(--od);">Biceps</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--blue2);">BI</div><div class="ex-name">Dumbbell Curl <span class="pr-badge" id="pr-thu-dbc">🏆</span></div></div></div><div class="set-log" id="sl-thu-dbc"></div><div class="ex-note"><div class="note">Neutral grip or slight supination. Full range. Squeeze at top.</div></div></div>
-  
-  <div class="sec" style="color:var(--red2);">Anti-Extension Core</div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Dead Bugs <span class="pr-badge" id="pr-thu-db">🏆</span></div></div></div><div class="set-log" id="sl-thu-db"></div><div class="ex-note"><div class="note">Lie on back. Opposite arm & leg extension. Protects lower back. 10 each side.</div></div></div>
-  
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Machine Crunches <span class="pr-badge" id="pr-thu-mc">🏆</span></div></div></div><div class="set-log" id="sl-thu-mc"></div><div class="ex-note"><div class="note">Knees bent to 90°. Controlled crunch. Direct waist work. 12–15 reps.</div></div></div>
-</div>
-
-<!-- FRIDAY: REST OR LIGHT -->
-<div class="page" id="day-fri">
-  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Friday</div><div class="dh-name" style="color:var(--green2);">REST DAY</div><div class="dh-meta">Optional light activity · Prioritize recovery</div></div><button class="mark-btn" id="mb-fri" onclick="markDay('fri')">MARK DONE</button></div>
-  
-  <div class="rest-card">
-    <div class="ri">🌟</div>
-    <h3>REST OR LIGHT WALK</h3>
-    <p><strong>Full rest is best.</strong> If you move, keep it easy: 20–30 min walk, gentle yoga, or stretching. No training intensity. Recovery is when adaptation happens.</p>
-  </div>
-</div>
-
-<!-- SATURDAY: OPTIONAL CARDIO -->
-<div class="page" id="day-sat">
-  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Saturday</div><div class="dh-name" style="color:var(--green2);">OPTIONAL CARDIO</div><div class="dh-meta">Light walk or bike · Waist-reduction zone 2</div></div><button class="mark-btn" id="mb-sat" onclick="markDay('sat')">MARK DONE</button></div>
-  
-  <div class="rest-card">
-    <div class="ri">🚴</div>
-    <h3>OPTIONAL SESSION</h3>
-    <p><strong>Zone 2 steady cardio if you feel good.</strong> 20–30 min bike or walk. No intensity. This is extra fat-loss opportunity but never forced. Listen to your body.</p>
-  </div>
-  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--green2);">CARDIO</div><div class="ex-name">Optional Activity <span class="pr-badge" id="pr-sat-opt">🏆</span></div></div></div><div class="set-log" id="sl-sat-opt"></div><div class="ex-note"><div class="note">Log if you do it: Bike 30 min / Walk 45 min / etc. This is bonus, not mandatory.</div></div></div>
-</div>
-
-<!-- SUNDAY: FULL REST -->
-<div class="page" id="day-sun">
-  <div class="rest-card">
-    <div class="ri">😴</div>
-    <h3>SUNDAY REST</h3>
-    <p><strong>Non-negotiable full rest day.</strong> Sleep 8–9 hours. Zero training. This is where the magic happens — adaptation and recovery. Protect this day fiercely.</p>
-  </div>
-</div>
-
-<script>
-var CW=parseInt(localStorage.getItem('is_wk')||'1');
-var DONE=JSON.parse(localStorage.getItem('is_done_'+CW)||'[]');
-var currentDay=localStorage.getItem('is_day')||'mon';
-
-var EXS=[
-  ['mon','mcp',3,true],['mon','rpd',3,true],['mon','tri',3,true],
-  ['mon','pal',3,false],['mon','plk',1,false],['mon','suc',3,false],
-  ['tue','lp',3,true],['tue','le',3,true],['tue','lc',3,true],['tue','gb',3,true],
-  ['wed','card',1,false],
-  ['thu','lpd',3,true],['thu','dbr',3,true],['thu','dbc',3,true],
-  ['thu','db',3,false],['thu','mc',3,true],
-  ['fri','rest',0,false],
-  ['sat','opt',1,false],
-];
-
-function lk(w,d,e,s){return 'is:w'+w+':'+d+':'+e+':s'+s;}
-
-function buildAllSets(){EXS.forEach(function(e){buildSets(e[0],e[1],e[2],e[3]);});}
-
-function buildSets(day,ex,n,hasBurnout){
-  var el=document.getElementById('sl-'+day+'-'+ex);
-  if(!el)return;
-  el.innerHTML='';
-  if(n===0){
-    el.innerHTML='<div style="padding:8px;text-align:center;color:var(--dim);font-size:10px;">Rest day — no logging needed</div>';
-    return;
-  }
-  var hdr=document.createElement('div');hdr.className='col-hdr';
-  hdr.innerHTML='<span>SET</span><span>LBS</span><span>REPS</span><span>PREV</span><span>✓</span>';
-  el.appendChild(hdr);
-  var workSets=hasBurnout?n-1:n;
-  for(var i=0;i<workSets;i++) appendRow(el,day,ex,i,false);
-  if(hasBurnout){
-    var blbl=document.createElement('div');blbl.className='burn-lbl';blbl.style.fontSize='8px';blbl.style.letterSpacing='2px';blbl.style.color='var(--od)';blbl.style.fontWeight='700';blbl.style.textTransform='uppercase';blbl.style.fontFamily="'DM Mono',monospace";blbl.style.padding='3px 0 3px 2px';
-    var prev=getPrev(day,ex,n-1);
-    var prevTxt='';
-    if(prev&&prev.r){var pr=parseInt(prev.r);var sym=pr>=20?'✅':pr>=15?'✔':'↑';prevTxt=' · PREV: '+(prev.w?prev.w+'×':'')+prev.r+' '+sym;}
-    blbl.textContent='BURNOUT 15–20'+prevTxt;
-    el.appendChild(blbl);
-    appendRow(el,day,ex,n-1,true);
-  }
-  var ab=document.createElement('button');ab.className='add-set';ab.textContent='+ ADD SET';
-  ab.onclick=(function(d,e,wrap){return function(){
-    var rows=wrap.querySelectorAll('.set-r').length;
-    appendRow(wrap,d,e,rows,false);wrap.appendChild(this);
-  };})(day,ex,el);
-  el.appendChild(ab);
-  var vf=document.createElement('div');vf.className='vol-footer';vf.id='vf-'+day+'-'+ex;
-  vf.innerHTML='<span>0/'+n+' sets</span><span>Vol: --</span>';
-  el.appendChild(vf);
-  restoreVals(day,ex,n+(hasBurnout?1:0));
-}
-
-function appendRow(el,day,ex,i,isBurn){
-  var prev=getPrev(day,ex,i);
-  var pt=(prev&&prev.w&&prev.r)?prev.w+'×'+prev.r:'—';
-  var r=document.createElement('div');r.className='set-r';
-  r.innerHTML='<div class="s-num">S'+(i+1)+'</div>'+
-    '<input class="s-input" type="number" placeholder="lbs" data-d="'+day+'" data-e="'+ex+'" data-i="'+i+'" data-f="w" data-burn="'+(isBurn?'1':'0')+'" oninput="onInp(this)">'+
-    '<input class="s-input" type="number" placeholder="reps" data-d="'+day+'" data-e="'+ex+'" data-i="'+i+'" data-f="r" data-burn="'+(isBurn?'1':'0')+'" oninput="onInp(this)">'+
-    '<div class="prev-col'+(pt==='—'?' empty':'')+'">'+pt+'</div>'+
-    '<button class="s-done" id="sd-'+day+'-'+ex+'-'+i+'" data-burn="'+(isBurn?'1':'0')+'" onclick="this.classList.toggle(\'done\');event.stopPropagation();">✓</button>';
-  var ab=el.querySelector('.add-set');
-  if(ab)el.insertBefore(r,ab);else el.appendChild(r);
-}
-
-function onInp(inp){
-  var d=inp.getAttribute('data-d'),e=inp.getAttribute('data-e'),
-      i=parseInt(inp.getAttribute('data-i')),f=inp.getAttribute('data-f');
-  var isBurn=inp.getAttribute('data-burn')==='1';
-  var key=lk(CW,d,e,i);
-  var saved=JSON.parse(localStorage.getItem(key)||'{}');
-  saved[f]=inp.value;
-  localStorage.setItem(key,JSON.stringify(saved));
-  var btn=document.getElementById('sd-'+d+'-'+e+'-'+i);
-  if(btn&&saved.w&&saved.r){
-    if(isBurn){var r=parseInt(saved.r);btn.className=r>=15?'s-done burn-done':'s-done burn-short';}
-    else{btn.className='s-done done';}
-    btn.textContent='✓';
-  }
-  updateVF(d,e);
-  checkPR(d,e);
-}
-
-function updateVF(d,e){
-  var exDef=EXS.filter(function(x){return x[0]===d&&x[1]===e;})[0];
-  if(!exDef)return;var n=exDef[2];var vol=0,filled=0;
-  for(var i=0;i<n+3;i++){var s=JSON.parse(localStorage.getItem(lk(CW,d,e,i))||'{}');if(s.r)filled++;if(s.w&&s.r)vol+=(parseFloat(s.w)||0)*(parseInt(s.r)||0);}
-  var vf=document.getElementById('vf-'+d+'-'+e);
-  if(vf)vf.innerHTML='<span>'+filled+'/'+n+' sets</span><span>Vol: '+(vol>0?vol.toLocaleString()+' lbs':'--')+'</span>';
-}
-
-function restoreVals(day,ex,n){
-  for(var i=0;i<n+3;i++){
-    var saved=JSON.parse(localStorage.getItem(lk(CW,day,ex,i))||'{}');
-    if(saved.w||saved.r){
-      var wi=document.querySelector('[data-d="'+day+'"][data-e="'+ex+'"][data-i="'+i+'"][data-f="w"]');
-      var ri=document.querySelector('[data-d="'+day+'"][data-e="'+ex+'"][data-i="'+i+'"][data-f="r"]');
-      if(wi&&saved.w)wi.value=saved.w;
-      if(ri&&saved.r){
-        ri.value=saved.r;
-        var isBurn=ri.getAttribute('data-burn')==='1';
-        var btn=document.getElementById('sd-'+day+'-'+ex+'-'+i);
-        if(btn&&saved.w){
-          if(isBurn){var rv=parseInt(saved.r);btn.className=rv>=15?'s-done burn-done':'s-done burn-short';}
-          else btn.className='s-done done';
-          btn.textContent='✓';
-        }
-      }
-    }
-  }
-  updateVF(day,ex);
-}
-
-function getPrev(day,ex,si){
-  if(CW<=1)return null;
-  var s=JSON.parse(localStorage.getItem(lk(CW-1,day,ex,si))||'{}');
-  return(s.r)?{w:s.w,r:s.r}:null;
-}
-
-function checkPR(d,e){
-  var best=0;for(var i=0;i<10;i++){var s=JSON.parse(localStorage.getItem(lk(CW,d,e,i))||'{}');if(s.w&&parseFloat(s.w)>best)best=parseFloat(s.w);}
-  if(!best)return;var allBest=0;
-  for(var w=1;w<CW;w++){for(var i=0;i<10;i++){var s=JSON.parse(localStorage.getItem(lk(w,d,e,i))||'{}');if(s.w&&parseFloat(s.w)>allBest)allBest=parseFloat(s.w);}}
-  var badge=document.getElementById('pr-'+d+'-'+e);
-  if(badge&&best>allBest&&allBest>0)badge.classList.add('show');
-  else if(badge)badge.classList.remove('show');
-}
-
-var ALL_DAYS=['mon','tue','wed','thu','fri','sat','sun'];
-function showDay(id,btn){
-  ALL_DAYS.forEach(function(d){var el=document.getElementById('day-'+d);if(el)el.style.display='none';});
-  document.querySelectorAll('.dbt').forEach(function(b){b.classList.remove('active');});
-  var el=document.getElementById('day-'+id);if(el)el.style.display='block';
-  if(btn)btn.classList.add('active');
-  else{var t=document.getElementById('dtb-'+id);if(t)t.classList.add('active');}
-  currentDay=id;localStorage.setItem('is_day',id);
-}
-
-function markDay(dayId){
-  var mb=document.getElementById('mb-'+dayId),tab=document.getElementById('dtb-'+dayId);
-  var idx=DONE.indexOf(dayId);
-  if(idx>-1){DONE.splice(idx,1);if(mb){mb.classList.remove('done');mb.textContent='MARK DONE';}if(tab)tab.classList.remove('done-d');}
-  else{DONE.push(dayId);if(mb){mb.classList.add('done');mb.textContent='✓ DONE';}if(tab)tab.classList.add('done-d');}
-  localStorage.setItem('is_done_'+CW,JSON.stringify(DONE));updateProgress();
-}
-
-var grid=document.getElementById('week-grid');
-[{n:'WK1'},{n:'WK2'},{n:'WK3'},{n:'WK4'},{n:'WK5'},{n:'WK6'},{n:'WK7'},{n:'WK8'},{n:'WK9'},{n:'WK10'},{n:'WK11'},{n:'WK12'}].forEach(function(w,i){
-  var btn=document.createElement('button');btn.className='wbtn'+(i+1===CW?' active':'');btn.textContent=w.n;
-  btn.onclick=(function(wk,el){return function(){
-    CW=wk;localStorage.setItem('is_wk',CW);
-    DONE=JSON.parse(localStorage.getItem('is_done_'+CW)||'[]');
-    document.querySelectorAll('.wbtn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');
-    updateProgress();restoreDayBtns();
-    EXS.forEach(function(e){var sl=document.getElementById('sl-'+e[0]+'-'+e[1]);if(sl)buildSets(e[0],e[1],e[2],e[3]);});
-    showDay(currentDay,null);
-  };})(i+1,btn);
-  grid.appendChild(btn);
-});
-
-function restoreDayBtns(){
-  ['mon','tue','wed','thu','fri','sat','sun'].forEach(function(d){
-    var t=document.getElementById('dtb-'+d),m=document.getElementById('mb-'+d);
-    if(DONE.includes(d)){if(t)t.classList.add('done-d');if(m){m.classList.add('done');m.textContent='✓ DONE';}}
-    else{if(t)t.classList.remove('done-d');if(m){m.classList.remove('done');m.textContent='MARK DONE';}}
-  });
-}
-
-function updateProgress(){
-  var active=['mon','tue','wed','thu'];
-  var done=active.filter(function(d){return DONE.includes(d);}).length;
-  document.getElementById('wpf').style.width=(done/4*100)+'%';
-  document.getElementById('wpc').textContent=done+' / 4';
-  var de=document.getElementById('wpd');de.innerHTML='';
-  [{id:'mon',l:'M'},{id:'tue',l:'T'},{id:'wed',l:'W'},{id:'thu',l:'T'},{id:'fri',l:'F'},{id:'sat',l:'S'},{id:'sun',l:'R'}].forEach(function(d){
-    var dot=document.createElement('div');dot.className='wp-dot'+(DONE.includes(d.id)?' done':'');
-    dot.innerHTML='<span>'+d.l+'</span>';de.appendChild(dot);
-  });
-}
-
-updateProgress();restoreDayBtns();buildAllSets();showDay(currentDay,null);
-</script>
-</body>
-</html>
-
-
