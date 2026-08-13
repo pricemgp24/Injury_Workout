@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>INJURY-SAFE TRAINING</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080a;--bg2:#0d0f12;--bg3:#121518;--border:#1c2028;--text:#e8eaf0;--muted:#7a8090;--dim:#3a4050;--od:#c8a840;--od2:#a88020;--od3:#806010;--red:#c03828;--red2:#e04838;--blue:#3068b0;--blue2:#4888d0;--green:#287840;--green2:#38a858;--white:#f0f2f8;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;max-width:520px;margin:0 auto;padding-bottom:80px;}
+.cover{position:relative;overflow:hidden;padding:28px 20px 20px;background:linear-gradient(160deg,#0a0c0f,#080a0d);border-bottom:2px solid var(--od3);}
+.cover::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(200,168,64,0.015) 40px,rgba(200,168,64,0.015) 41px),repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(200,168,64,0.015) 40px,rgba(200,168,64,0.015) 41px);}
+.cover .branch{font-size:9px;letter-spacing:6px;color:var(--od);font-family:'DM Mono',monospace;margin-bottom:8px;position:relative;z-index:1;text-transform:uppercase;}
+.cover h1{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:900;line-height:0.95;margin-bottom:6px;position:relative;z-index:1;}
+.cover h1 .l1{color:var(--white);}.cover h1 .l2{color:var(--od);}
+.cover .sub{font-size:10px;color:var(--muted);line-height:1.7;margin-bottom:14px;position:relative;z-index:1;font-family:'DM Mono',monospace;}
+.grid-lbl{font-size:8px;letter-spacing:3px;color:var(--dim);font-family:'DM Mono',monospace;text-transform:uppercase;margin-bottom:4px;position:relative;z-index:1;}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;position:relative;z-index:1;margin-bottom:10px;}
+.sc{background:rgba(200,168,64,0.07);border:1px solid rgba(200,168,64,0.18);border-radius:5px;padding:7px 5px;text-align:center;}
+.sc .sv{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;color:var(--od);line-height:1;}
+.sc .sk{font-size:8px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+.tc{background:rgba(192,56,40,0.08);border:1px solid rgba(224,72,56,0.2);border-radius:5px;padding:7px 5px;text-align:center;}
+.tc .sv{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;color:var(--red2);line-height:1;}
+.tc .sk{font-size:8px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+/* TIMELINE */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--border);}
+.tl{padding:9px 8px;text-align:center;border-right:1px solid var(--border);font-size:9px;font-family:'DM Mono',monospace;letter-spacing:1px;}
+.tl:last-child{border-right:none;}
+.tl .tw{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;display:block;line-height:1;margin-bottom:2px;}
+.tl-phase{background:rgba(200,168,64,0.06);color:var(--od);}
+/* WEEK SEL */
+.week-sel{background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 12px;}
+.ws-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;}
+.wbtn{padding:6px 2px;border-radius:4px;font-size:10px;font-weight:700;font-family:'DM Mono',monospace;border:1px solid var(--border);background:var(--bg3);color:var(--dim);cursor:pointer;text-align:center;transition:all 0.15s;}
+.wbtn.active{background:var(--od3);border-color:var(--od);color:var(--od);}
+/* PROGRESS */
+.wk-prog{padding:8px 16px;background:var(--bg2);border-bottom:1px solid var(--border);}
+.wp-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;}
+.wp-lbl{font-size:8px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;font-family:'DM Mono',monospace;}
+.wp-cnt{font-size:10px;color:var(--od);font-weight:700;font-family:'DM Mono',monospace;}
+.wp-bar{height:4px;background:var(--border);border-radius:2px;overflow:hidden;}
+.wp-fill{height:100%;background:linear-gradient(90deg,var(--od3),var(--od));border-radius:2px;transition:width 0.4s;}
+.wp-dots{display:flex;gap:4px;margin-top:8px;}
+.wp-dot{flex:1;height:5px;border-radius:3px;background:var(--border);position:relative;}
+.wp-dot.done{background:var(--od);}
+.wp-dot span{position:absolute;top:8px;left:50%;transform:translateX(-50%);font-size:7px;color:var(--muted);font-family:'DM Mono',monospace;}
+/* DAY BAR */
+.day-bar{display:flex;overflow-x:auto;background:var(--bg2);border-bottom:1px solid var(--border);scrollbar-width:none;}
+.day-bar::-webkit-scrollbar{display:none;}
+.dbt{padding:9px 12px;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--dim);cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.15s;flex-shrink:0;text-transform:uppercase;background:none;border-left:none;border-right:none;border-top:none;font-family:'DM Mono',monospace;}
+.dbt.active{color:var(--od);border-bottom-color:var(--od);}
+.dbt.done-d{color:var(--green2);}
+/* PAGE */
+.page{display:none;padding:12px 14px;}
+.page.active{display:block;}
+/* DAY HDR */
+.day-hdr{background:linear-gradient(135deg,var(--bg3),#0a0c10);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;}
+.dh-left .dh-day{font-size:8px;letter-spacing:4px;color:var(--muted);font-family:'DM Mono',monospace;text-transform:uppercase;margin-bottom:2px;}
+.dh-left .dh-name{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:900;letter-spacing:1px;line-height:1;}
+.dh-left .dh-meta{font-size:10px;color:var(--muted);margin-top:3px;font-family:'DM Mono',monospace;}
+.mark-btn{padding:6px 12px;border-radius:16px;border:1px solid var(--border);background:var(--bg);color:var(--muted);font-size:10px;font-weight:700;cursor:pointer;font-family:'DM Mono',monospace;letter-spacing:1px;}
+.mark-btn.done{background:var(--green);border-color:var(--green2);color:var(--white);}
+/* SEC */
+.sec{font-size:8px;font-weight:700;letter-spacing:4px;color:var(--dim);padding:10px 0 6px;display:flex;align-items:center;gap:8px;text-transform:uppercase;font-family:'DM Mono',monospace;}
+.sec::after{content:'';flex:1;height:1px;background:var(--border);}
+/* EX CARD */
+.ex-card{background:var(--bg2);border:1px solid var(--border);border-radius:7px;margin-bottom:7px;overflow:hidden;}
+.ex-top{padding:9px 12px 7px;display:flex;justify-content:space-between;align-items:flex-start;gap:6px;border-bottom:1px solid var(--border);}
+.ex-left{flex:1;}
+.ex-cat{font-size:7px;letter-spacing:3px;font-weight:700;text-transform:uppercase;font-family:'DM Mono',monospace;margin-bottom:2px;}
+.ex-name{font-size:14px;font-weight:700;color:var(--text);line-height:1.2;}
+.pr-badge{font-size:8px;font-weight:700;padding:2px 5px;border-radius:3px;background:rgba(200,168,64,0.15);color:var(--od);margin-left:5px;display:none;font-family:'DM Mono',monospace;}
+.pr-badge.show{display:inline;}
+/* SET LOG */
+.set-log{padding:6px 12px 8px;}
+.col-hdr{display:grid;grid-template-columns:26px 1fr 1fr 62px 26px;gap:4px;margin-bottom:4px;}
+.col-hdr span{font-size:8px;letter-spacing:1px;color:var(--dim);text-align:center;text-transform:uppercase;font-weight:700;font-family:'DM Mono',monospace;}
+.set-r{display:grid;grid-template-columns:26px 1fr 1fr 62px 26px;gap:4px;align-items:center;margin-bottom:4px;}
+.s-num{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;text-align:center;background:var(--bg3);border-radius:3px;padding:6px 0;font-weight:700;}
+.s-input{background:var(--bg3);border:1px solid var(--border);border-radius:4px;color:var(--text);font-size:13px;padding:5px 3px;font-family:'DM Sans',sans-serif;width:100%;text-align:center;font-weight:600;}
+.s-input:focus{outline:none;border-color:var(--od);}
+.s-input::placeholder{color:var(--dim);font-size:10px;}
+.prev-col{font-size:10px;color:var(--od);text-align:center;font-family:'DM Mono',monospace;padding:6px 3px;background:var(--bg3);border-radius:4px;font-weight:600;}
+.prev-col.empty{color:var(--dim);}
+.s-done{width:26px;height:26px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;margin:0 auto;}
+.s-done.done{background:var(--green);border-color:var(--green2);color:#fff;}
+.add-set{width:100%;padding:5px;background:transparent;border:1px dashed var(--border);border-radius:4px;color:var(--muted);font-size:9px;font-weight:700;letter-spacing:2px;cursor:pointer;font-family:'DM Mono',monospace;margin-top:2px;}
+.vol-footer{display:flex;justify-content:space-between;padding:5px 0 1px;font-size:9px;color:var(--dim);font-family:'DM Mono',monospace;border-top:1px solid var(--border);margin-top:3px;}
+/* NOTE */
+.ex-note{padding:0 12px 10px;}
+.note{font-size:11px;color:var(--muted);line-height:1.6;}
+.note strong{color:var(--text);font-weight:600;}
+/* REST */
+.rest-card{background:var(--bg2);border:1px solid var(--border);border-radius:7px;padding:24px 18px;text-align:center;margin-bottom:8px;}
+.rest-card .ri{font-size:36px;margin-bottom:8px;}
+.rest-card h3{font-family:'Barlow Condensed',sans-serif;font-size:22px;letter-spacing:2px;color:var(--od);margin-bottom:6px;}
+.rest-card p{font-size:12px;color:var(--muted);line-height:1.7;}
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="branch">Knee-Safe • Shoulder-Safe • Waist-Focused</div>
+  <h1><span class="l1">INJURY</span><br><span class="l2">SMART</span></h1>
+  <p class="sub">Knee-friendly machines · Rotator cuff safe · Anti-rotation core<br>4-day split · Steady cardio · Waist reduction focused</p>
+  <div class="grid-lbl">Phase</div>
+  <div class="stat-row">
+    <div class="sc"><div class="sv">—</div><div class="sk">Weeks</div></div>
+    <div class="sc"><div class="sv">4</div><div class="sk">Days/Wk</div></div>
+    <div class="sc"><div class="sv">19</div><div class="sk">Exercises</div></div>
+    <div class="sc"><div class="sv">∞</div><div class="sk">Tracking</div></div>
+  </div>
+  <div class="grid-lbl">Goals</div>
+  <div class="stat-row">
+    <div class="tc"><div class="sv">↓</div><div class="sk">Waist</div></div>
+    <div class="tc"><div class="sv">↑</div><div class="sk">Core</div></div>
+    <div class="tc"><div class="sv">✓</div><div class="sk">Healthy</div></div>
+    <div class="tc"><div class="sv">📈</div><div class="sk">Progress</div></div>
+  </div>
+</div>
+
+<div class="timeline">
+  <div class="tl tl-phase"><span class="tw">WEEK 1</span>BUILD</div>
+  <div class="tl tl-phase"><span class="tw">WEEK 2</span>BUILD</div>
+  <div class="tl tl-phase"><span class="tw">WEEK 3</span>BUILD</div>
+  <div class="tl tl-phase"><span class="tw">WEEK 4+</span>MAINTAIN</div>
+</div>
+
+<div class="week-sel"><div class="ws-grid" id="week-grid"></div></div>
+
+<div class="wk-prog">
+  <div class="wp-row"><span class="wp-lbl">Weekly Progress</span><span class="wp-cnt" id="wpc">0 / 4</span></div>
+  <div class="wp-bar"><div class="wp-fill" id="wpf" style="width:0%"></div></div>
+  <div class="wp-dots" id="wpd"></div>
+</div>
+
+<div class="day-bar">
+  <button class="dbt active" onclick="showDay('mon',this)" id="dtb-mon">MON</button>
+  <button class="dbt" onclick="showDay('tue',this)" id="dtb-tue">TUE</button>
+  <button class="dbt" onclick="showDay('wed',this)" id="dtb-wed">WED</button>
+  <button class="dbt" onclick="showDay('thu',this)" id="dtb-thu">THU</button>
+  <button class="dbt" onclick="showDay('fri',this)" id="dtb-fri">FRI</button>
+  <button class="dbt" onclick="showDay('sat',this)" id="dtb-sat">SAT</button>
+  <button class="dbt" onclick="showDay('sun',this)" id="dtb-sun">SUN</button>
+</div>
+
+<!-- MONDAY: PUSH & CORE -->
+<div class="page active" id="day-mon">
+  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Monday</div><div class="dh-name" style="color:var(--od);">PUSH & CORE</div><div class="dh-meta">Chest · Triceps · Rotation · ~55 min</div></div><button class="mark-btn" id="mb-mon" onclick="markDay('mon')">MARK DONE</button></div>
+  
+  <div class="sec" style="color:var(--od);">Chest</div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">CHEST</div><div class="ex-name">Machine Chest Press <span class="pr-badge" id="pr-mon-mcp">🏆</span></div></div></div><div class="set-log" id="sl-mon-mcp"></div><div class="ex-note"><div class="note">Slight incline. Full range of motion. Safe machine-based pressing.</div></div></div>
+  
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">CHEST</div><div class="ex-name">Reverse Pec Deck <span class="pr-badge" id="pr-mon-rpd">🏆</span></div></div></div><div class="set-log" id="sl-mon-rpd"></div><div class="ex-note"><div class="note">Rear delts & shoulder health. Squeeze at peak contraction.</div></div></div>
+  
+  <div class="sec" style="color:var(--od);">Triceps</div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--blue2);">TRI</div><div class="ex-name">Tricep Pushdown <span class="pr-badge" id="pr-mon-tri">🏆</span></div></div></div><div class="set-log" id="sl-mon-tri"></div><div class="ex-note"><div class="note">Rope or bar. Full lockout. Elbows pinned to ribs.</div></div></div>
+  
+  <div class="sec" style="color:var(--red2);">Anti-Rotation Core</div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Pallof Press <span class="pr-badge" id="pr-mon-pal">🏆</span></div></div></div><div class="set-log" id="sl-mon-pal"></div><div class="ex-note"><div class="note">Cable at chest height. Press out and fight rotation. THE waist-tightening exercise. 12 each side.</div></div></div>
+  
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Plank Hold <span class="pr-badge" id="pr-mon-plk">🏆</span></div></div></div><div class="set-log" id="sl-mon-plk"></div><div class="ex-note"><div class="note">Braced tight. 30–60 seconds. Isometric core stability. Log your best hold time.</div></div></div>
+  
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Suitcase Carry <span class="pr-badge" id="pr-mon-suc">🏆</span></div></div></div><div class="set-log" id="sl-mon-suc"></div><div class="ex-note"><div class="note">One-sided load. Obliques work hard to prevent tilting. 30–40 steps each side. Log weight carried.</div></div></div>
+</div>
+
+<!-- TUESDAY: LOWER + CARDIO -->
+<div class="page" id="day-tue">
+  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Tuesday</div><div class="dh-name" style="color:var(--od);">LOWER + CARDIO</div><div class="dh-meta">Quads · Hamstrings · Glutes · Bike · ~55 min + cardio</div></div><button class="mark-btn" id="mb-tue" onclick="markDay('tue')">MARK DONE</button></div>
+  
+  <div class="sec" style="color:var(--od);">Lower Body — Knee Safe</div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">QUAD</div><div class="ex-name">Leg Press (Machine) <span class="pr-badge" id="pr-tue-lp">🏆</span></div></div></div><div class="set-log" id="sl-tue-lp"></div><div class="ex-note"><div class="note">Keep knees at 90° max. Safer than squats. Controlled range of motion.</div></div></div>
+  
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">QUAD</div><div class="ex-name">Leg Extension <span class="pr-badge" id="pr-tue-le">🏆</span></div></div></div><div class="set-log" id="sl-tue-le"></div><div class="ex-note"><div class="note">2-second squeeze at peak. Isolated quad work. No impact on knees.</div></div></div>
+  
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">HAM</div><div class="ex-name">Leg Curl <span class="pr-badge" id="pr-tue-lc">🏆</span></div></div></div><div class="set-log" id="sl-tue-lc"></div><div class="ex-note"><div class="note">Slow negative. 3-second descent. Hamstring development supports lower body.</div></div></div>
+  
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">GLUTE</div><div class="ex-name">Glute Bridge <span class="pr-badge" id="pr-tue-gb">🏆</span></div></div></div><div class="set-log" id="sl-tue-gb"></div><div class="ex-note"><div class="note">1-second squeeze at top. Glute activation. Can use bodyweight or light weight.</div></div></div>
+</div>
+
+<!-- WEDNESDAY: CARDIO & RECOVERY -->
+<div class="page" id="day-wed">
+  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Wednesday</div><div class="dh-name" style="color:var(--green2);">CARDIO & RECOVERY</div><div class="dh-meta">Active recovery · Zone 2 pace · Steady state</div></div><button class="mark-btn" id="mb-wed" onclick="markDay('wed')">MARK DONE</button></div>
+  
+  <div class="rest-card">
+    <div class="ri">🚴</div>
+    <h3>STEADY CARDIO</h3>
+    <p><strong>Rowing machine, stationary bike, or easy walk.</strong> 20–30 minutes at conversational pace. Zone 2 fat-burning. Log your duration and modality. This is where waist reduction happens.</p>
+  </div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--green2);">CARDIO</div><div class="ex-name">Steady State Session <span class="pr-badge" id="pr-wed-card">🏆</span></div></div></div><div class="set-log" id="sl-wed-card"></div><div class="ex-note"><div class="note">Log your choice: Rower / Bike / Walk, duration, and how you felt. Pace should allow full conversation.</div></div></div>
+</div>
+
+<!-- THURSDAY: PULL & ABS -->
+<div class="page" id="day-thu">
+  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Thursday</div><div class="dh-name" style="color:var(--od);">PULL & ABS</div><div class="dh-meta">Back · Biceps · Anti-Extension Core · ~55 min</div></div><button class="mark-btn" id="mb-thu" onclick="markDay('thu')">MARK DONE</button></div>
+  
+  <div class="sec" style="color:var(--od);">Back</div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">BACK</div><div class="ex-name">Lat Pulldown (Narrow) <span class="pr-badge" id="pr-thu-lpd">🏆</span></div></div></div><div class="set-log" id="sl-thu-lpd"></div><div class="ex-note"><div class="note">Shoulder-width grip. Narrow is safer for rotator cuff. Pull to mid-chest.</div></div></div>
+  
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--od);">BACK</div><div class="ex-name">Dumbbell Rows <span class="pr-badge" id="pr-thu-dbr">🏆</span></div></div></div><div class="set-log" id="sl-thu-dbr"></div><div class="ex-note"><div class="note">One arm at a time. Light to moderate weight. Controlled tempo. 10–12 each side.</div></div></div>
+  
+  <div class="sec" style="color:var(--od);">Biceps</div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--blue2);">BI</div><div class="ex-name">Dumbbell Curl <span class="pr-badge" id="pr-thu-dbc">🏆</span></div></div></div><div class="set-log" id="sl-thu-dbc"></div><div class="ex-note"><div class="note">Neutral grip or slight supination. Full range. Squeeze at top.</div></div></div>
+  
+  <div class="sec" style="color:var(--red2);">Anti-Extension Core</div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Dead Bugs <span class="pr-badge" id="pr-thu-db">🏆</span></div></div></div><div class="set-log" id="sl-thu-db"></div><div class="ex-note"><div class="note">Lie on back. Opposite arm & leg extension. Protects lower back. 10 each side.</div></div></div>
+  
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--red2);">CORE</div><div class="ex-name">Machine Crunches <span class="pr-badge" id="pr-thu-mc">🏆</span></div></div></div><div class="set-log" id="sl-thu-mc"></div><div class="ex-note"><div class="note">Knees bent to 90°. Controlled crunch. Direct waist work. 12–15 reps.</div></div></div>
+</div>
+
+<!-- FRIDAY: REST OR LIGHT -->
+<div class="page" id="day-fri">
+  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Friday</div><div class="dh-name" style="color:var(--green2);">REST DAY</div><div class="dh-meta">Optional light activity · Prioritize recovery</div></div><button class="mark-btn" id="mb-fri" onclick="markDay('fri')">MARK DONE</button></div>
+  
+  <div class="rest-card">
+    <div class="ri">🌟</div>
+    <h3>REST OR LIGHT WALK</h3>
+    <p><strong>Full rest is best.</strong> If you move, keep it easy: 20–30 min walk, gentle yoga, or stretching. No training intensity. Recovery is when adaptation happens.</p>
+  </div>
+</div>
+
+<!-- SATURDAY: OPTIONAL CARDIO -->
+<div class="page" id="day-sat">
+  <div class="day-hdr"><div class="dh-left"><div class="dh-day">Saturday</div><div class="dh-name" style="color:var(--green2);">OPTIONAL CARDIO</div><div class="dh-meta">Light walk or bike · Waist-reduction zone 2</div></div><button class="mark-btn" id="mb-sat" onclick="markDay('sat')">MARK DONE</button></div>
+  
+  <div class="rest-card">
+    <div class="ri">🚴</div>
+    <h3>OPTIONAL SESSION</h3>
+    <p><strong>Zone 2 steady cardio if you feel good.</strong> 20–30 min bike or walk. No intensity. This is extra fat-loss opportunity but never forced. Listen to your body.</p>
+  </div>
+  <div class="ex-card"><div class="ex-top"><div class="ex-left"><div class="ex-cat" style="color:var(--green2);">CARDIO</div><div class="ex-name">Optional Activity <span class="pr-badge" id="pr-sat-opt">🏆</span></div></div></div><div class="set-log" id="sl-sat-opt"></div><div class="ex-note"><div class="note">Log if you do it: Bike 30 min / Walk 45 min / etc. This is bonus, not mandatory.</div></div></div>
+</div>
+
+<!-- SUNDAY: FULL REST -->
+<div class="page" id="day-sun">
+  <div class="rest-card">
+    <div class="ri">😴</div>
+    <h3>SUNDAY REST</h3>
+    <p><strong>Non-negotiable full rest day.</strong> Sleep 8–9 hours. Zero training. This is where the magic happens — adaptation and recovery. Protect this day fiercely.</p>
+  </div>
+</div>
+
+<script>
+var CW=parseInt(localStorage.getItem('is_wk')||'1');
+var DONE=JSON.parse(localStorage.getItem('is_done_'+CW)||'[]');
+var currentDay=localStorage.getItem('is_day')||'mon';
+
+var EXS=[
+  ['mon','mcp',3,true],['mon','rpd',3,true],['mon','tri',3,true],
+  ['mon','pal',3,false],['mon','plk',1,false],['mon','suc',3,false],
+  ['tue','lp',3,true],['tue','le',3,true],['tue','lc',3,true],['tue','gb',3,true],
+  ['wed','card',1,false],
+  ['thu','lpd',3,true],['thu','dbr',3,true],['thu','dbc',3,true],
+  ['thu','db',3,false],['thu','mc',3,true],
+  ['fri','rest',0,false],
+  ['sat','opt',1,false],
+];
+
+function lk(w,d,e,s){return 'is:w'+w+':'+d+':'+e+':s'+s;}
+
+function buildAllSets(){EXS.forEach(function(e){buildSets(e[0],e[1],e[2],e[3]);});}
+
+function buildSets(day,ex,n,hasBurnout){
+  var el=document.getElementById('sl-'+day+'-'+ex);
+  if(!el)return;
+  el.innerHTML='';
+  if(n===0){
+    el.innerHTML='<div style="padding:8px;text-align:center;color:var(--dim);font-size:10px;">Rest day — no logging needed</div>';
+    return;
+  }
+  var hdr=document.createElement('div');hdr.className='col-hdr';
+  hdr.innerHTML='<span>SET</span><span>LBS</span><span>REPS</span><span>PREV</span><span>✓</span>';
+  el.appendChild(hdr);
+  var workSets=hasBurnout?n-1:n;
+  for(var i=0;i<workSets;i++) appendRow(el,day,ex,i,false);
+  if(hasBurnout){
+    var blbl=document.createElement('div');blbl.className='burn-lbl';blbl.style.fontSize='8px';blbl.style.letterSpacing='2px';blbl.style.color='var(--od)';blbl.style.fontWeight='700';blbl.style.textTransform='uppercase';blbl.style.fontFamily="'DM Mono',monospace";blbl.style.padding='3px 0 3px 2px';
+    var prev=getPrev(day,ex,n-1);
+    var prevTxt='';
+    if(prev&&prev.r){var pr=parseInt(prev.r);var sym=pr>=20?'✅':pr>=15?'✔':'↑';prevTxt=' · PREV: '+(prev.w?prev.w+'×':'')+prev.r+' '+sym;}
+    blbl.textContent='BURNOUT 15–20'+prevTxt;
+    el.appendChild(blbl);
+    appendRow(el,day,ex,n-1,true);
+  }
+  var ab=document.createElement('button');ab.className='add-set';ab.textContent='+ ADD SET';
+  ab.onclick=(function(d,e,wrap){return function(){
+    var rows=wrap.querySelectorAll('.set-r').length;
+    appendRow(wrap,d,e,rows,false);wrap.appendChild(this);
+  };})(day,ex,el);
+  el.appendChild(ab);
+  var vf=document.createElement('div');vf.className='vol-footer';vf.id='vf-'+day+'-'+ex;
+  vf.innerHTML='<span>0/'+n+' sets</span><span>Vol: --</span>';
+  el.appendChild(vf);
+  restoreVals(day,ex,n+(hasBurnout?1:0));
+}
+
+function appendRow(el,day,ex,i,isBurn){
+  var prev=getPrev(day,ex,i);
+  var pt=(prev&&prev.w&&prev.r)?prev.w+'×'+prev.r:'—';
+  var r=document.createElement('div');r.className='set-r';
+  r.innerHTML='<div class="s-num">S'+(i+1)+'</div>'+
+    '<input class="s-input" type="number" placeholder="lbs" data-d="'+day+'" data-e="'+ex+'" data-i="'+i+'" data-f="w" data-burn="'+(isBurn?'1':'0')+'" oninput="onInp(this)">'+
+    '<input class="s-input" type="number" placeholder="reps" data-d="'+day+'" data-e="'+ex+'" data-i="'+i+'" data-f="r" data-burn="'+(isBurn?'1':'0')+'" oninput="onInp(this)">'+
+    '<div class="prev-col'+(pt==='—'?' empty':'')+'">'+pt+'</div>'+
+    '<button class="s-done" id="sd-'+day+'-'+ex+'-'+i+'" data-burn="'+(isBurn?'1':'0')+'" onclick="this.classList.toggle(\'done\');event.stopPropagation();">✓</button>';
+  var ab=el.querySelector('.add-set');
+  if(ab)el.insertBefore(r,ab);else el.appendChild(r);
+}
+
+function onInp(inp){
+  var d=inp.getAttribute('data-d'),e=inp.getAttribute('data-e'),
+      i=parseInt(inp.getAttribute('data-i')),f=inp.getAttribute('data-f');
+  var isBurn=inp.getAttribute('data-burn')==='1';
+  var key=lk(CW,d,e,i);
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  saved[f]=inp.value;
+  localStorage.setItem(key,JSON.stringify(saved));
+  var btn=document.getElementById('sd-'+d+'-'+e+'-'+i);
+  if(btn&&saved.w&&saved.r){
+    if(isBurn){var r=parseInt(saved.r);btn.className=r>=15?'s-done burn-done':'s-done burn-short';}
+    else{btn.className='s-done done';}
+    btn.textContent='✓';
+  }
+  updateVF(d,e);
+  checkPR(d,e);
+}
+
+function updateVF(d,e){
+  var exDef=EXS.filter(function(x){return x[0]===d&&x[1]===e;})[0];
+  if(!exDef)return;var n=exDef[2];var vol=0,filled=0;
+  for(var i=0;i<n+3;i++){var s=JSON.parse(localStorage.getItem(lk(CW,d,e,i))||'{}');if(s.r)filled++;if(s.w&&s.r)vol+=(parseFloat(s.w)||0)*(parseInt(s.r)||0);}
+  var vf=document.getElementById('vf-'+d+'-'+e);
+  if(vf)vf.innerHTML='<span>'+filled+'/'+n+' sets</span><span>Vol: '+(vol>0?vol.toLocaleString()+' lbs':'--')+'</span>';
+}
+
+function restoreVals(day,ex,n){
+  for(var i=0;i<n+3;i++){
+    var saved=JSON.parse(localStorage.getItem(lk(CW,day,ex,i))||'{}');
+    if(saved.w||saved.r){
+      var wi=document.querySelector('[data-d="'+day+'"][data-e="'+ex+'"][data-i="'+i+'"][data-f="w"]');
+      var ri=document.querySelector('[data-d="'+day+'"][data-e="'+ex+'"][data-i="'+i+'"][data-f="r"]');
+      if(wi&&saved.w)wi.value=saved.w;
+      if(ri&&saved.r){
+        ri.value=saved.r;
+        var isBurn=ri.getAttribute('data-burn')==='1';
+        var btn=document.getElementById('sd-'+day+'-'+ex+'-'+i);
+        if(btn&&saved.w){
+          if(isBurn){var rv=parseInt(saved.r);btn.className=rv>=15?'s-done burn-done':'s-done burn-short';}
+          else btn.className='s-done done';
+          btn.textContent='✓';
+        }
+      }
+    }
+  }
+  updateVF(day,ex);
+}
+
+function getPrev(day,ex,si){
+  if(CW<=1)return null;
+  var s=JSON.parse(localStorage.getItem(lk(CW-1,day,ex,si))||'{}');
+  return(s.r)?{w:s.w,r:s.r}:null;
+}
+
+function checkPR(d,e){
+  var best=0;for(var i=0;i<10;i++){var s=JSON.parse(localStorage.getItem(lk(CW,d,e,i))||'{}');if(s.w&&parseFloat(s.w)>best)best=parseFloat(s.w);}
+  if(!best)return;var allBest=0;
+  for(var w=1;w<CW;w++){for(var i=0;i<10;i++){var s=JSON.parse(localStorage.getItem(lk(w,d,e,i))||'{}');if(s.w&&parseFloat(s.w)>allBest)allBest=parseFloat(s.w);}}
+  var badge=document.getElementById('pr-'+d+'-'+e);
+  if(badge&&best>allBest&&allBest>0)badge.classList.add('show');
+  else if(badge)badge.classList.remove('show');
+}
+
+var ALL_DAYS=['mon','tue','wed','thu','fri','sat','sun'];
+function showDay(id,btn){
+  ALL_DAYS.forEach(function(d){var el=document.getElementById('day-'+d);if(el)el.style.display='none';});
+  document.querySelectorAll('.dbt').forEach(function(b){b.classList.remove('active');});
+  var el=document.getElementById('day-'+id);if(el)el.style.display='block';
+  if(btn)btn.classList.add('active');
+  else{var t=document.getElementById('dtb-'+id);if(t)t.classList.add('active');}
+  currentDay=id;localStorage.setItem('is_day',id);
+}
+
+function markDay(dayId){
+  var mb=document.getElementById('mb-'+dayId),tab=document.getElementById('dtb-'+dayId);
+  var idx=DONE.indexOf(dayId);
+  if(idx>-1){DONE.splice(idx,1);if(mb){mb.classList.remove('done');mb.textContent='MARK DONE';}if(tab)tab.classList.remove('done-d');}
+  else{DONE.push(dayId);if(mb){mb.classList.add('done');mb.textContent='✓ DONE';}if(tab)tab.classList.add('done-d');}
+  localStorage.setItem('is_done_'+CW,JSON.stringify(DONE));updateProgress();
+}
+
+var grid=document.getElementById('week-grid');
+[{n:'WK1'},{n:'WK2'},{n:'WK3'},{n:'WK4'},{n:'WK5'},{n:'WK6'},{n:'WK7'},{n:'WK8'},{n:'WK9'},{n:'WK10'},{n:'WK11'},{n:'WK12'}].forEach(function(w,i){
+  var btn=document.createElement('button');btn.className='wbtn'+(i+1===CW?' active':'');btn.textContent=w.n;
+  btn.onclick=(function(wk,el){return function(){
+    CW=wk;localStorage.setItem('is_wk',CW);
+    DONE=JSON.parse(localStorage.getItem('is_done_'+CW)||'[]');
+    document.querySelectorAll('.wbtn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');
+    updateProgress();restoreDayBtns();
+    EXS.forEach(function(e){var sl=document.getElementById('sl-'+e[0]+'-'+e[1]);if(sl)buildSets(e[0],e[1],e[2],e[3]);});
+    showDay(currentDay,null);
+  };})(i+1,btn);
+  grid.appendChild(btn);
+});
+
+function restoreDayBtns(){
+  ['mon','tue','wed','thu','fri','sat','sun'].forEach(function(d){
+    var t=document.getElementById('dtb-'+d),m=document.getElementById('mb-'+d);
+    if(DONE.includes(d)){if(t)t.classList.add('done-d');if(m){m.classList.add('done');m.textContent='✓ DONE';}}
+    else{if(t)t.classList.remove('done-d');if(m){m.classList.remove('done');m.textContent='MARK DONE';}}
+  });
+}
+
+function updateProgress(){
+  var active=['mon','tue','wed','thu'];
+  var done=active.filter(function(d){return DONE.includes(d);}).length;
+  document.getElementById('wpf').style.width=(done/4*100)+'%';
+  document.getElementById('wpc').textContent=done+' / 4';
+  var de=document.getElementById('wpd');de.innerHTML='';
+  [{id:'mon',l:'M'},{id:'tue',l:'T'},{id:'wed',l:'W'},{id:'thu',l:'T'},{id:'fri',l:'F'},{id:'sat',l:'S'},{id:'sun',l:'R'}].forEach(function(d){
+    var dot=document.createElement('div');dot.className='wp-dot'+(DONE.includes(d.id)?' done':'');
+    dot.innerHTML='<span>'+d.l+'</span>';de.appendChild(dot);
+  });
+}
+
+updateProgress();restoreDayBtns();buildAllSets();showDay(currentDay,null);
+</script>
+</body>
+</html>
+
+
